@@ -179,7 +179,7 @@ public class SwipeBackLayout extends FrameLayout {
         mContentView = view;
     }
 
-    public void setEnableGesture(boolean enable) {
+    public void setSwipeBackEnable(boolean enable) {
         mEnable = enable;
     }
 

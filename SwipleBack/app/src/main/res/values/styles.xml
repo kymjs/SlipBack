@@ -13,7 +13,7 @@
 		<item name="windowNoTitle">true</item>
 	</style>
 
-	<style name="KJAppTheme">
+	<style name="KJAppTheme" parent="AppTheme">
 		<item name="android:windowIsTranslucent">true</item>
 	</style>
 

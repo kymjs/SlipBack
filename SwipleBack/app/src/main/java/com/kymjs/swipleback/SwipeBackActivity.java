@@ -1,14 +1,14 @@
 package com.kymjs.swipleback;
 
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 
 /**
  * @author kymjs (http://www.kymjs.com/) on 9/25/15.
  */
-public class SwipeBackActivity extends FragmentActivity implements SwipeBackActivityBase {
+public class SwipeBackActivity extends AppCompatActivity {
 
     private SwipeBackActivityHelper mHelper;
 
@@ -28,22 +28,20 @@ public class SwipeBackActivity extends FragmentActivity implements SwipeBackActi
     @Override
     public View findViewById(int id) {
         View v = super.findViewById(id);
-        if (v == null && mHelper != null)
-            return mHelper.findViewById(id);
+        if (v == null && mHelper != null) {
+            v = mHelper.findViewById(id);
+        }
         return v;
     }
 
-    @Override
     public SwipeBackLayout getSwipeBackLayout() {
         return mHelper.getSwipeBackLayout();
     }
 
-    @Override
     public void setSwipeBackEnable(boolean enable) {
-        getSwipeBackLayout().setEnableGesture(enable);
+        getSwipeBackLayout().setSwipeBackEnable(enable);
     }
 
-    @Override
     public void scrollToFinishActivity() {
         Utils.convertActivityToTranslucent(this);
         getSwipeBackLayout().scrollToFinishActivity();
